@@ -7,22 +7,34 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest --coverage --watchAll"
+    "serve": "ts-node -r dotenv/config src",
+    "test": "jest --coverage --watchAll",
+    "watch": "nodemon"
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "@types/faker": "^5.5.9",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.7",
+    "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "dotenv": "^16.0.0",
     "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jest": "^25.2.4",
     "faker": "^5.5.3",
     "jest": "^27.3.1",
+    "nodemon": "^2.0.15",
     "prettier": "^2.4.1",
+    "supertest": "^6.2.2",
     "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "helmet": "^5.0.2",
+    "yup": "^1.0.0-beta.2"
   }
 }
