@@ -2,6 +2,7 @@ import { ErrorRequestHandler } from "express";
 import { ValidationError } from "yup";
 import * as Errors from "../../lib/errors";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default (): ErrorRequestHandler => (err, _req, res, _next) => {
   if (ValidationError.isError(err)) {
     res.status(400).send({ error: err, statusCode: 400 });
