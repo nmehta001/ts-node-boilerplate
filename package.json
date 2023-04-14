@@ -8,11 +8,16 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint ./src ./test --fix --ext .js,.jsx,.ts,.tsx",
-    "serve": "ts-node -r dotenv/config src",
     "prepare": "husky install",
+    "serve": "ts-node -r dotenv/config src",
     "test": "jest --coverage --logHeapUsage --runInBand",
     "test:coverage": "yarn test --coverage --passWithNoTests",
     "watch": "nodemon"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "helmet": "^6.0.0",
+    "yup": "^1.0.0-beta.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.0",
@@ -37,9 +42,7 @@
     "ts-node": "^10.6.0",
     "typescript": "^4.6.2"
   },
-  "dependencies": {
-    "express": "^4.17.3",
-    "helmet": "^6.0.0",
-    "yup": "^1.0.0-beta.2"
+  "engines": {
+    "node": "^18"
   }
 }
