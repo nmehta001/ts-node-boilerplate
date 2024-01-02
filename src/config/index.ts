@@ -1,19 +1,19 @@
 import { bool, InferType, number, object } from "yup";
 
 const configSchema = object({
-  isDevelopment: bool(),
-  isProduction: bool(),
+  isDevelopment: bool().required(),
+  isProduction: bool().required(),
   port: number().required(),
 });
 
 export const init = async () => {
-  const env = process.env.NODE_ENV || "production";
+  const env = process.env["NODE_ENV"] || "production";
 
   return configSchema.validate({
     isDevelopment: env !== "production",
     isProduction: env === "production",
 
-    port: process.env.PORT || 3001,
+    port: process.env["PORT"] || 3001,
   });
 };
 
